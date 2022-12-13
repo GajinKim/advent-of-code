@@ -11,31 +11,31 @@ const packets = [
 ];
 
 packets.sort((a, b) => {
-  return compare(a, b) ? -1 : 1;
+  return compare(a, b) == 1 ? -1 : 1;
 });
 
 function compare(a, b) {
   if (Number.isInteger(a) && Number.isInteger(b)) {
     if (a < b) {
-      return true;
+      return 1;
     } else if (a > b) {
-      return false;
+      return 2;
     } else {
-      return undefined; // cycle once
+      return 3; // cycle once
     }
   } else if (Array.isArray(a) && Array.isArray(b)) {
     for (let i = 0; i < a.length && i < b.length; i++) {
       let comp = compare(a[i], b[i]);
-      if (comp != undefined) {
+      if (comp != 3) {
         return comp;
       }
     }
     if (a.length < b.length) {
-      return true;
+      return 1;
     } else if (a.length > b.length) {
-      return false;
+      return 2;
     }
-    return undefined;
+    return 3;
   } else {
     return compare(
       Number.isInteger(a) ? [a] : a,

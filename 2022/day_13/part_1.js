@@ -47,6 +47,6 @@ function compare(a, b) {
 
 const answer = rightOrderCount.reduce((total, curVal) => {
   return (total += curVal);
-});
+}, 0);
 
 console.log(answer);

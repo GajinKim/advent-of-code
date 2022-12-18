@@ -54,7 +54,7 @@ let spawnNewRock = true;
 let currentRockType = undefined;
 let jetIndex = 0;
 
-while (rocksSpawned < 10000000) {
+while (rocksSpawned < 2022) {
   let flat = true;
   for (let i = 0; i < 7; i++) {
     if (!grid.has(`${i},${highestRockYPos}`)) {

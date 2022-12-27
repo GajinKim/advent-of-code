@@ -48,8 +48,8 @@ const box = [
   [3, 4],
   [3, 5],
 ];
-
-let rocksSpawned = 0;
+        
+let rocksSpawned = 0; 
 let spawnNewRock = true;
 let currentRockType = undefined;
 let jetIndex = 0;
